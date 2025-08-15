@@ -7,6 +7,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { Zap, Cpu, Layers, Award, Check, Users, Calendar, TrendingUp, Play, Pause, RotateCw, Upload, Share2, Heart, MessageCircle, Star, Trophy, Target, Gauge, Wind, Activity, Code, Lightbulb, Rocket, Brain, Shield, ChevronRight, Menu, X, Sun, Moon, Github, Twitter, Youtube, Wifi, Battery, Search, ZoomIn, Maximize, Download, Eye, Signal, LogOut, Clock } from 'lucide-react';
 import Dashboard from './Dashboard';
 import CircuitPlayground from './CircuitPlayground';
+import KiteDesignStudio from './KiteDesignStudio';
 
 
 
@@ -382,7 +383,7 @@ export default function STEMLabPlatform() {
               {/* Desktop Navigation */}
               <div className="hidden md:block ml-10">
                 <div className="flex items-baseline space-x-4">
-                  {['Home', '3D Gallery', 'Flight Lab', 'Circuits', 'Achievements', 'Community'].map((item) => (
+                  {['Home', '3D Gallery', 'Flight Lab', 'Circuits', 'Kites', 'Community'].map((item) => (
                     <button
                       key={item}
                       onClick={() => setActiveSection(item.toLowerCase().replace(' ', ''))}
@@ -1426,90 +1427,11 @@ export default function STEMLabPlatform() {
         {/* Circuit Playground */}
         {activeSection === 'circuits' && <CircuitPlayground />}
 
-        {/* Achievements */}
-        {activeSection === 'achievements' && (
-          <div className="space-y-8">
-            <div className="text-center mb-12">
-              <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 bg-clip-text text-transparent">
-                Achievement System
-              </h2>
-              <p className="text-gray-400 text-lg">Track your progress and unlock rewards</p>
-            </div>
+        {/* Interactive Kite Solution */}
 
-            {/* User Stats */}
-            <div className="bg-gradient-to-r from-pink-500/10 to-orange-500/10 rounded-2xl p-8 border border-pink-500/30 backdrop-blur-sm">
-              <div className="grid md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-pink-400 mb-2">{userXP}</div>
-                  <div className="text-gray-400">Total XP</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-orange-400 mb-2">12</div>
-                  <div className="text-gray-400">Projects</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-yellow-400 mb-2">8</div>
-                  <div className="text-gray-400">Badges</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-green-400 mb-2">Level 7</div>
-                  <div className="text-gray-400">Rank</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Achievement Grid */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {achievements.map((achievement) => (
-                <div
-                  key={achievement.id}
-                  className={`p-6 rounded-xl border transition-all duration-300 ${
-                    achievement.unlocked
-                      ? 'bg-gradient-to-br from-gray-900 to-gray-800 border-yellow-500/50 hover:border-yellow-400'
-                      : 'bg-gray-900/30 border-gray-800 opacity-60'
-                  }`}
-                >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className={`p-3 rounded-lg ${
-                      achievement.unlocked ? 'bg-yellow-500/20' : 'bg-gray-800'
-                    }`}>
-                      <achievement.icon className={`w-8 h-8 ${
-                        achievement.unlocked ? 'text-yellow-400' : 'text-gray-600'
-                      }`} />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold">{achievement.name}</h4>
-                      <p className="text-sm text-gray-400">+{achievement.xp} XP</p>
-                    </div>
-                  </div>
-                  {achievement.unlocked && (
-                    <div className="flex items-center gap-2 text-green-400 text-sm">
-                      <Shield className="w-4 h-4" />
-                      <span>Unlocked</span>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* Skill Tree Preview */}
-            <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800">
-              <h3 className="text-2xl font-bold mb-6 text-pink-400">Skill Tree</h3>
-              <div className="flex justify-center">
-                <div className="relative">
-                  {/* Skill nodes would go here */}
-                  <div className="text-center">
-                    <div className="w-32 h-32 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center mb-4">
-                      <Brain className="w-16 h-16 text-white" />
-                    </div>
-                    <p className="text-gray-400">Advanced Skills Locked</p>
-                    <p className="text-sm text-gray-500 mt-2">Reach Level 10 to unlock</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+        {activeSection === 'kites' && <KiteDesignStudio />}
+        
+        
 
         {/* Community */}
         {activeSection === 'community' && (
