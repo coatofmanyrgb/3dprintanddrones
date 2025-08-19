@@ -375,7 +375,20 @@ export default function STEMLabPlatform() {
             {/* Logo and Desktop Nav */}
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <img 
+                  src="/logo.png" 
+                  alt="3D Prints and Drones" 
+                  className="h-14 w-auto"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'block';
+                  }}
+                />
+                <h1 
+                  className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                  style={{ display: 'none' }}
+                >
                   3D Prints and Drones
                 </h1>
               </div>

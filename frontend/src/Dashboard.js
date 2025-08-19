@@ -86,9 +86,31 @@ const Dashboard = ({ user, onLogout, onNavigateToMain }) => {
       <div className="p-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
           {!sidebarCollapsed && (
-            <h2 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Dashboard
-            </h2>
+            <div className="flex items-center gap-2">
+              <img 
+                src="/logo.png" 
+                alt="3D Prints and Drones" 
+                className="h-12 w-auto"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'block';
+                }}
+              />
+              <h2 
+                className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                style={{ display: 'none' }}
+              >
+                Dashboard
+              </h2>
+            </div>
+          )}
+
+          {sidebarCollapsed && (
+            <img 
+              src="/logo.png" 
+              alt="3D Prints and Drones" 
+              className="h-14 w-8 mx-auto object-contain"
+            />
           )}
           <button
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
