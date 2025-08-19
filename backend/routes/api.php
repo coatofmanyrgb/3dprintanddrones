@@ -49,6 +49,14 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/flight-videos/{flightVideo}', [FlightVideoController::class, 'destroy']);
     Route::post('/flight-videos/{flightVideo}/annotate', [FlightVideoController::class, 'addAnnotation']);
     Route::post('/flight-videos/compare', [FlightVideoController::class, 'compare']);
+
+    //Flight Analysis
+
+    Route::get('/flight-videos/{video}/analysis', [FlightAnalysisController::class, 'show']);
+    Route::post('/flight-videos/{video}/analyze', [FlightAnalysisController::class, 'analyzeVideo']);
+    Route::post('/flight-videos/{video}/telemetry', [FlightAnalysisController::class, 'storeDataPoint']);
+    Route::get('/flight-videos/{video}/path', [FlightAnalysisController::class, 'getFlightPath']);
+    Route::post('/flight-videos/compare-analysis', [FlightAnalysisController::class, 'compare']);
     
     // Circuits
     Route::get('/circuits', [CircuitController::class, 'index']);

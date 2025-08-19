@@ -26,6 +26,8 @@ import {
 // Make sure this import path is correct based on your file structure
 import MyProjects from './MyProjects';
 import CircuitPlayground from './CircuitPlayground';
+import FlightLab from './FlightLab';
+
 
 console.log('MyProjects imported:', MyProjects);
 console.log('Type of MyProjects:', typeof MyProjects);
@@ -55,7 +57,7 @@ const Dashboard = ({ user, onLogout, onNavigateToMain }) => {
   const menuItems = [
     { id: 'overview', label: 'Overview', icon: LayoutDashboard },
     { id: 'projects', label: 'My Projects', icon: Layers },
-    { id: 'flights', label: 'Flight Videos', icon: Play },
+    { id: 'flights', label: 'Flight Lab', icon: Play },
     { id: 'circuits', label: 'Circuits', icon: Cpu },
     { id: 'achievements', label: 'Achievements', icon: Trophy },
     { id: 'learning', label: 'Learning', icon: BookOpen },
@@ -354,7 +356,7 @@ const Dashboard = ({ user, onLogout, onNavigateToMain }) => {
         }
         return <MyProjects user={user} />;
       case 'flights':
-        return <div className="bg-white rounded-xl p-8 shadow-sm"><h2 className="text-2xl font-bold mb-4">Flight Videos</h2><p>Flight videos section coming soon...</p></div>;
+        return <FlightLab user={user} />;
       case 'circuits':
         return <CircuitPlayground user={user} />;
       case 'achievements':

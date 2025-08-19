@@ -43,4 +43,16 @@ class FlightVideo extends Model
     {
         return $this->belongsTo(Project::class);
     }
+
+    public function analysis()
+    {
+        return $this->hasOne(FlightAnalysis::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(FlightComment::class);
+    }
+
+
 }

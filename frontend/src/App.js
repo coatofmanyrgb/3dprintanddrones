@@ -8,6 +8,7 @@ import { Zap, Cpu, Layers, Award, Check, Users, Calendar, TrendingUp, Play, Paus
 import Dashboard from './Dashboard';
 import CircuitPlayground from './CircuitPlayground';
 import KiteDesignStudio from './KiteDesignStudio';
+import FlightLab from './FlightLab';
 
 
 
